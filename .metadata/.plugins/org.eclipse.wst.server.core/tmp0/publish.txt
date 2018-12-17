@@ -1,0 +1,8 @@
+#Tomcat publish data
+#Thu Dec 06 22:22:58 CST 2018
+org.eclipse.jst.j2ee.server\:taotao_manager_dao=WEB-INF/lib/taotao_manager_dao-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.jee.server\:/binary\:G\:\\workspace-ruanjian\\ttk\\WebContent\\WEB-INF\\lib\\spring-web-4.1.4.RELEASE.jar=WEB-INF/lib/spring-web-4.1.4.RELEASE.jar
+org.eclipse.jst.j2ee.server\:taotao_common=WEB-INF/lib/taotao_common-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.jee.server\:/binary\:G\:\\workspace-ruanjian\\repository\\org\\springframework\\spring-web\\4.2.4.RELEASE\\spring-web-4.2.4.RELEASE.jar=WEB-INF/lib/spring-web-4.2.4.RELEASE.jar
+org.eclipse.jst.j2ee.server\:taotao_manager_interface=WEB-INF/lib/taotao_manager_interface-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:taotao_manager_pojo=WEB-INF/lib/taotao_manager_pojo-0.0.1-SNAPSHOT.jar

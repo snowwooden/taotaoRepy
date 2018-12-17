@@ -1,0 +1,182 @@
+#content{
+	min-height: 500px;
+	margin: 0 auto;
+}
+
+#all-back{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	z-index: 80;
+	opacity: 0.8;
+}
+
+.gs-head{
+	margin: 10px;
+	padding: 3px 10px;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 2px solid #42A0FF;
+	color: #42A0FF;
+	font-weight: bold;
+}
+
+
+/*修改用户资料板块****************************************/
+#my-info{
+	display: none;
+	padding: 50px;
+	position: fixed;
+	width: 400px;
+	background: white;
+	border: 1px solid black;
+	z-index: 99;
+	left: 450px;
+	top: 50px;
+}
+
+#my-info .my-info-p{
+	font-size: 14px;
+	min-height: 30px;
+	line-height: 30px;
+}
+
+.my-info-p:first-child{
+	margin-top: 20px;
+}
+
+#uh_ls{
+	height: 80px;
+	width: 450px;
+	margin-top: -20px;
+	margin-left: -30px;
+	position: relative;
+}
+
+#uh_ls li{
+	min-height: 80px;
+	min-width: 80px;
+	float: left;
+	margin: 0 3px;
+}
+
+#uh_ls li img{
+	height: 70px;
+	width: 70px;
+	border: 3px solid #CCCCCC;
+}
+
+#checked-ico{
+	position: absolute;
+	z-index: 999;
+	top: 48px;
+	height: 25px !important;
+	width: 25px !important;
+	border: none !important;
+}
+.checked-ico-1{left: 137px;}
+.checked-ico-2{left: 223px;}
+.checked-ico-3{left: 309px;}
+.checked-ico-4{left: 395px;}
+
+#my-info .my-info-p label{
+	font-size: 12px;
+	display: inline-block;
+	min-width: 80px;
+}
+
+#my-info input[type=text]{
+	padding: 2px 5px;
+}
+
+#my-info input[type=button]{
+	border: none;
+	background: #42A0FF;
+	color: white;
+	font-size: 12px;
+	padding: 5px 50px;
+}
+
+#u_Year,#u_Month,#u_Date{
+	margin-left: -5px;
+	margin-right: 5px;
+	width: 60px;
+	height: 23px;
+	line-height: 23px;
+}
+
+
+/*用户发布板块****************************************/
+#per-pub{
+	float: left;
+	width: 70%;
+	min-height: 300px;
+}
+
+#per-pub table {
+	border: none;
+	text-align: center;
+	margin-left: 0;
+	padding: 0 20px;
+	margin-bottom: 40px;
+}
+
+.head-tr{
+	height: 50px;
+	font-size: 14px;
+}
+
+#per-pub table td{
+	font-size: 12px;
+	min-width: 100px;
+}
+
+
+
+/*用户资料板块****************************************/
+#per-info{
+	width: 25%;
+	float: right;
+	border: 1px solid #CCCCCC;
+	padding: 10px 0;
+}
+
+#per-info-list li{
+	text-align: center;
+}
+
+#per-info-list li img{
+	margin-top: 50px;
+	height: 100px;
+	width: 100px;
+	border: 3px solid #CCCCCC;
+}
+
+#per-info-list li p{
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+}
+
+#per-info-list input[type=text]{
+	text-align: center;
+	border: none;
+	background: white;
+}
+
+#u-sex,#u-dorm{
+	width: 50px;
+}
+
+#edit-info{
+	position: absolute;
+	right: 10px;
+	font-size: 12px;
+	text-decoration: underline;
+	color: #666666;
+}
+

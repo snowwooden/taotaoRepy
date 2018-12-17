@@ -1,0 +1,54 @@
+package text;
+
+import java.util.Scanner;
+
+public class Tc {
+
+	public static void main(String[] args) {
+		/*double x = 0,y = 0;
+	     System.out.print("输入当月利润（万）：");
+	     Scanner s = new Scanner(System.in);
+	     x = s.nextInt();
+	     if(x > 0 && x <= 10) {
+	     y = x * 0.1;
+	     } else if(x > 10 && x <= 20) {
+	      y = 10 * 0.1 + (x - 10) * 0.075;
+	     } else if(x > 20 && x <= 40) {
+	      y = 10 * 0.1 + 10 * 0.075 + (x - 20) * 0.05;
+	     } else if(x > 40 && x <= 60) {
+	      y = 10 * 0.1 + 10 * 0.075 + 20 * 0.05 + (x - 40) * 0.03;
+	     } else if(x > 60 && x <= 100) {
+	      y = 20 * 0.175 + 20 * 0.05 + 20 * 0.03 + (x - 60) * 0.015; 
+	     } else if(x > 100) {
+	      y = 20 * 0.175 + 40 * 0.08 + 40 * 0.015 + (x - 100) * 0.01;
+	     }
+	     System.out.println("应该提取的奖金是 " + y + "万");
+	}*/
+        
+		System.out.println("请输入：");
+		Scanner f=new Scanner(System.in);
+		   double a=10;
+		    
+			double jj=0;
+			if(a<=10){
+				jj=a*(1/10);
+			}else if(a>10&&a<=20){
+				jj=1+(a-10)*(3/40);
+			}else if(a>20&&a<=40){
+				jj=1+0.75+(a-20)*(1/20);
+			}else if(a>40&&a<=60){
+				jj=1+0.75+1+(a-40)*(3/100);
+			}else if(a>60&&a<=100){
+				jj=1+0.75+1+0.6+(a-60)*(3/200);
+			}else if(a>100){
+				jj=1+0.75+1+0.6+0.6+(a-60)*(3/200);
+			}//else {break;}
+			System.out.println("请输入纯利润："+jj+"w");
+		}
+	
+
+	}
+
+
+
+

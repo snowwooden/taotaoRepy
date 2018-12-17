@@ -1,0 +1,162 @@
+package text;
+
+import java.io.FileReader;
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class Six {
+	/**
+	 * 
+	 */
+	public static void sit() {
+		System.out.println("请输入：");
+		Scanner sc = new Scanner(System.in);
+		int m = sc.nextInt();
+		if ((m % 4 == 0) && (m % 100 != 0) || (m % 400 == 0)) {
+			System.out.println(m + "是闰年");
+
+		} else {
+			System.out.println(m + "不是闰年");
+
+		}
+
+	}
+
+	public static void back() {
+
+		int n = 0;
+		int m = 0;
+		while (n <= 200000000) {
+			m += n;
+			System.out.println("M=" + m);
+			n++;
+			System.out.println("N=" + n);
+
+		}
+		System.out.println("结果是" + m);
+
+	}
+
+	public static void fuck() {
+		int n = 1;
+		int m = 1;
+		while (m <= 5) {
+			n = 1;
+			while (n <= m) {
+				System.out.print("*");
+				n++;
+			}
+			System.out.println();
+			m++;
+		}
+
+	}
+
+	public static void str() {
+		int[] s = new int[5];
+		int max = s[0];
+		Scanner bt = new Scanner(System.in);
+		int sun = 0;
+		for (int i = 0; i < s.length; i++) {
+			System.out.println("请输入：");
+			s[i] = bt.nextInt();
+		}
+		System.out.print("输入的素组为：");
+		for (int i = 0; i < s.length; i++) {
+			System.out.println(s[i] + "  ");
+			sun += s[i];
+		}
+
+		System.out.println("和为：" + sun);
+		for (int i = 0; i < s.length; i++) {
+			if (max < s[i]) {
+				max = s[i];
+			}
+
+		}
+		System.out.println("max：" + max);
+	}
+
+	public static void maopao() {
+		int[] a = { 21, 45, 78, 52 };
+		int temb;
+		System.out.println("排序前");
+		for (int m : a) {
+			System.out.print(m + " ");
+
+		}
+		for (int i = 0; i < a.length - 1; i++) {
+			for (int j = 0; j < a.length - i - 1; j++) {
+				if (a[j] > a[j + 1]) {
+					temb = a[j];
+					a[j] = a[j + 1];
+					a[j + 1] = temb;
+				}
+
+			}
+		}
+		System.out.println();
+		System.out.println("排序后");
+		for (int m : a) {
+			System.out.print(m + " ");
+
+		}
+
+	}
+
+	public int eit() {
+		int x, y, area;
+		System.out.println("输入长");
+		Scanner sv = new Scanner(System.in);
+		x = sv.nextInt();
+		System.out.println("输入宽");
+		Scanner vs = new Scanner(System.in);
+		y = vs.nextInt();
+		area = x * y;
+		System.out.println("该长方形的面积=" + area);
+		return area;
+	}
+
+	public static void main(String[] args) {
+		// Six fSix= new Six();
+		// fSix.eit();
+		//
+		// System.out.println("ok");
+		//
+		Etion sEtion = new Etion();
+		// sEtion.ceshi();
+		// sEtion.charset();
+		String a = "Programming";
+		String b = new String("Programming");
+		String c = "Program" + "ming";
+
+		System.out.println(a == b);
+		System.out.println(a == c);
+		System.out.println(a.equals(b));
+		System.out.println(a.equals(c));
+		System.out.println(a.intern() == b.intern());
+
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DATE, -1);
+		System.out.println(cal.getTime());
+		try(FileReader fr = new FileReader("C:/Users/Administrator/Desktop/域名.txt")) {
+			int counter = 0;
+			 boolean state = false;
+			 int currentChar;
+			 while((currentChar= fr.read()) != -1) {
+			 if(currentChar== ' ' || currentChar == '/n'
+			  || currentChar == '/t' || currentChar == '/r') {
+			  state = false;
+			 }
+			  else if(!state) {
+			  state = true;
+			  counter++;
+			  }
+			  }
+			  System.out.println(counter);
+			  }
+			  catch(Exceptione) {
+			  e.printStackTrace();
+	}
+}
+}

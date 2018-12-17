@@ -1,0 +1,110 @@
+#content{
+	width: 80%;
+	margin: 0 auto;
+}
+
+#left_gsinfo{
+	height: 500px;
+	width: 56%;
+	float: left;
+}
+
+#righ_gsinfo{
+	height: 500px;
+	width: 40%;
+	float: right;
+	line-height: 40px;
+}
+
+#left_gsinfo .gsimg{
+	width: 100%;
+	height: 400px;
+	background: url(../img/goods/gsbg.png) no-repeat;
+	background-size: contain;
+}
+
+#left_gsinfo .gsimg img{
+	height: 400px;
+}
+
+#left_gsinfo .gslis{
+	height: 15%;
+	padding: 2%;
+	overflow: hidden;
+}
+
+#left_gsinfo .gslis li{
+	float: left;
+	height: 98%;
+	padding: 0 10px;
+	border: 1px solid #CCCCCC;
+	margin: 0 10px;
+}
+
+#left_gsinfo .gslis li:hover{
+	border-color:#42A0FF;
+}
+
+#left_gsinfo .gslis li img{
+	height: 100%;
+}
+
+#righ_gsinfo p{
+	height: 40px;
+	font-size: 14px;
+}
+
+input[type=button]{
+	background: #42A0FF;
+	border: none;
+	padding: 10px 50px;
+	color: white;
+	font-size: 18px;
+}
+
+.picon{
+	color: #999999;
+}
+
+.price2{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#price{
+	color: #42A0FF;
+}
+
+.btn-p{
+	margin-top: 20px;
+	height: auto;
+}
+
+.gsintro{
+	clear: both;
+	width: 100%;
+	padding: 20px 0;
+}
+
+.gsintro p{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+
+.gsintro p:first-child{
+	border-bottom: 5px solid #42A0FF;
+}
+
+.gsintro p:first-child span{
+	font-size: 16px;
+	font-weight: bold;
+	background: #42A0FF;
+	display: inline-block;
+	color: white;
+	height: 30px;
+	width: 120px;
+	text-align: center;
+	line-height: 35px;
+}
+

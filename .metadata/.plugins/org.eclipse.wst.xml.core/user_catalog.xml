@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="http://code.alibabatech.com/schema/dubbo" uri="file:///H:/studyfile/java实战/Java%20SSM淘淘商城12天电商项目/参考资料/dubbo/dubbo.xsd"/>
+  <uri name="http://code.alibabatech.com/schema/dubbo/dubbo.xsd" uri="file:///H:/studyfile/java实战/Java%20SSM淘淘商城12天电商项目/参考资料/dubbo/dubbo.xsd"/>
+</catalog>

@@ -1,0 +1,16 @@
+package com.taotao.content.testforjdis;
+
+import redis.clients.jedis.Jedis;
+
+public class JedisTest {
+	public void jedisTest() throws Exception{
+	  Jedis jedis = new Jedis("192.168.25.128", 6379);
+	  String string =jedis.get("str1");
+	  System.out.println(string);
+	  jedis.close();
+	  
+	}
+
+	  
+
+}

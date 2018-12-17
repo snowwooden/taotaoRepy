@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- 配置实体类的别名 -->
+	<typeAliases>
+		<!-- 加上这句后 可以省略不写(mapper中) -->
+		<package name="com.shm.beans"/>
+	</typeAliases>
+	
+    <mappers>
+    	<mapper resource="com/shm/xmls/User.xml"/>
+    	<mapper resource="com/shm/xmls/Feedback.xml"/>
+    	<mapper resource="com/shm/xmls/Admin.xml"/>
+    	<mapper resource="com/shm/xmls/GoodsType.xml"/>
+    	<mapper resource="com/shm/xmls/Goods.xml"/>
+    </mappers>
+    
+</configuration>

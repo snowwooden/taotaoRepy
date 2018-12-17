@@ -1,0 +1,34 @@
+<table id="feedback-panel" data-options="fit:true"></table>
+<script type="text/javascript">
+$(function(){
+	$('#feedback-panel').datagrid({
+		url:'../json/Feedback_backInit',
+		loadMsg:'数据加载中...',
+		fitColumns:true,
+		rownumbers:true,
+		striped:true,
+		sortName:'fbId',
+		sortOrder:'asc',
+		remoteSort:false,
+		columns:[[
+			{field:'Id',title:'',width:100,align:'center',checkbox:true},
+			{field:'fbId',title:'编号',width:100,align:'center',sortable:true},
+			{field:'fbTitle',title:'反馈标题',width:200,align:'center'}, 
+			{field:'fbContent',title:'反馈内容',width:500,align:'center'},
+			{field:'userId',title:'反馈人ID',width:100,align:'center'}, 
+			{field:'fbTime',title:'反馈时间',width:200,align:'center'}
+		]],
+		toolbar : [{
+			iconCls : 'icon-remove',
+			text : '删除',
+			handler : function() {
+				alert('help');
+			}
+		}]
+	});
+});
+
+function AddModify() {
+	
+}
+</script>

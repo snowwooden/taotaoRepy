@@ -1,0 +1,153 @@
+<table id="goods-panel" data-options="fit:true"></table>
+<script>
+$(function(){
+	$('#goods-panel').datagrid({
+		url:'../json/Goods_backGoodsList',
+		loadMsg:'数据加载中...',
+		fitColumns:true,
+		rownumbers:true,
+		striped:true,
+		sortName:'gid',
+		sortOrder:'asc',
+		remoteSort:false,
+		columns:[[
+			{field:'id',title:'',width:30,align:'center',checkbox:true},
+			{field:'gid',title:'商品编号',width:50,align:'center',sortable:true},
+			{field:'gsTitle',title:'商品名称',width:100,align:'center'}, 
+			{field:'price',title:'原价',width:50,align:'center'}, 
+			{field:'discount',title:'二手价',width:50,align:'center'},
+			{field:'color',title:'成色',width:50,align:'center'},
+			{field:'gsIntro',title:'商品描述',width:100,align:'center'},
+			{field:'deal',title:'交易方式',width:50,align:'center'},
+			{field:'pTime',title:'发布时间',width:100,align:'center'},
+			{field:'show_status',title:'审核状态',width:50,align:'center',formatter:function(value, rowData, index){
+				return value!=true?"未审核":"审核通过";
+			}},
+			{field:'buy_status',title:'出售状态',width:50,align:'center',formatter:function(value, rowData, index){
+				return value!=true?"未售出":"已售出";
+			}},
+			{field:'tid',title:'分类ID',width:50,align:'center'},
+			{field:'userId',title:'发布人ID',width:50,align:'center'},
+			{field:'_operate',title:'操作',width:50,align:'center',formatter:function(value, rowData, index){
+				return "<a class='icon-file icon-padding' href=\"javascript:showImg("+rowData.gid+")\">查看</a>";
+			}}
+		]],
+		toolbar: [{
+			iconCls: 'icon-remove',
+			text:'删除',
+			handler: function(){
+				
+			}
+		}]
+	});
+});
+
+function showImg(id){
+	$.ajax({
+	    url: "../json/Goods_oneGoodsInfo",
+	    dataType: "json",   
+	    async: true, 
+	    type: "POST",
+	    data:{
+	    	"goods.gid": id
+	    },
+	    success: function(data) {
+	    	if(data.obj != null){
+	    		$("#gs_0").val(data.obj.gid);
+	    		$("#gs_1").html(data.obj.gsTitle);
+	    		$("#gs_2").html(data.obj.temp2);
+	    		$("#gs_3").html(data.obj.temp1);
+	    		$("#gs_4").html(data.obj.price);
+	    		$("#gs_5").html(data.obj.discount);
+	    		$("#gs_6").html(data.obj.color);
+	    		$("#gs_7").html(data.obj.gsIntro);
+	    		$("#gs_8").html(data.obj.pTime.substr(0,10));
+	    		$("#gs_9").html(data.obj.deal);
+	    		$("#gs_10").html(data.obj.show_status!=true?"未审核":"审核通过");
+	    		$("#gs_11").html(data.obj.buy_status!=true?"未售出":"已售出");
+	    		var imgs = data.obj.imgUrl.split(";");
+	    		$("#show_img").html("");
+	    		$.each(imgs, function(index, item) {
+	    			$('<li style="float:left;margin-left:5px;"><img style="width:150px;" src="' + item + '"></li>').appendTo($('#show_img'));
+	    		});
+	    		$("#goods-info").dialog("open");
+	    	}else{
+	    		$.messager.alert('错误提示','操作失败,请稍后重试!','error');
+	    	}
+	    }
+	});
+}
+
+function changeShowStatus() {
+	var gid = $("#gs_0").val();
+	$.ajax({
+	    url: "../json/Goods_editShowStatus",
+	    dataType: "json",   
+	    async: true, 
+	    type: "POST",
+	    data:{
+	    	"goods.gid": gid
+	    },
+	    success: function(data) {
+	    	if(data.result > 0) {
+	    		$.messager.alert('提示','操作成功!','info');
+	    		$("#goods-panel").datagrid("reload");
+	    	} else if(data.result == 0) {
+	    		$.messager.alert('提示','该商品已经通过审核!','warning');
+	    	} else {
+	    		$.messager.alert('提示','操作失败!','error');
+	    	}
+	    }
+	});
+}
+</script>
+<div id="goods-info" class="easyui-dialog" title="商品信息" style="width:900px;height:500px;"
+	data-options="iconCls:'icon-search',resizable:true,modal:true,closed:true">
+	<div style="float:left;width:60%;height100%;">
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<input type="hidden" id="gs_0"/>
+			<label>商品名称：</label><span id="gs_1"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>商品分类：</label><span id="gs_2"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>发布人：</label><span id="gs_3"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>原价：￥</label><span id="gs_4"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>二手价：￥</label><span id="gs_5"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>成色：</label><span id="gs_6"></span>
+		</p>
+		<p style="min-height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>商品描述：</label><span id="gs_7"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>发布时间：</label><span id="gs_8"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>交易方式：</label><span id="gs_9"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>审核状态：</label><span id="gs_10"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<label>交易状态：</label><span id="gs_11"></span>
+		</p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;"></p>
+		<p style="height:30px;line-height:30px;text-align:left;padding-left:20px;">
+			<input style="padding:2px 15px;" type="button" onclick="changeShowStatus()" value="通过审核">
+		</p>
+	</div>
+	<div style="float:right; width:40%;height:100%;">
+		<p style="height:30px;line-height:30px;paddin-left:20px;">商品图片</p>
+		<ul id="show_img" style="list-style:none;">
+			<li><img src=""></li>
+		</ul>
+	</div>
+</div>
+

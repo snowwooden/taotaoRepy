@@ -1,0 +1,33 @@
+package text;
+
+import java.util.Scanner;
+
+public class Tc {
+
+	public static void main(String[] args) {
+		/*System.out.println("请输入纯利润：");
+		Scanner f=new Scanner(System.in);
+		double m=f.nextInt();
+		tc(m);*/
+		
+			double jj=0;
+			double a=60;
+			if(a<=10){
+				jj=a*(1/10);
+			}else if(a>10&&a<=20){
+				jj=1+(a-10)*(3/40);
+			}else if(a>20&&a<=40){
+				jj=1+0.75+(a-20)*(1/20);
+			}else if(a>40&&a<=60){
+				jj=1+0.75+1+(a-40)*(3/100);
+			}else if(a>60&&a<=100){
+				jj=1+0.75+1+0.6+(a-60)*(3/200);
+			}else if(a>100){
+				jj=1+0.75+1+0.6+0.6+(a-60)*(3/200);
+			}//else {break;}
+			System.out.println("请输入纯利润："+jj);
+		}
+
+	}
+
+

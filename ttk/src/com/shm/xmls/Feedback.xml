@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shm.dao.IFeedbackDao">
+    <select id="getFbList" resultMap="fbList">
+    	select * from shm_feedback
+    </select>
+    
+    <insert id="addOneFb" parameterType="feedback">
+    	insert into shm_feedback values(null, #{fbTitle}, #{fbContent}, now(), #{userId})
+    </insert>
+    
+    <resultMap type="feedback" id="fbList" autoMapping="true">
+    	<id column="FID" property="fid"/>
+    </resultMap>
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shm.dao.IGoodsTypeDao">
+
+    <select id="getTypeList" resultMap="typeList">
+    	select * from shm_goodsType
+    </select>
+    
+    <resultMap type="goodsType" id="typeList" autoMapping="true">
+    	<id column="TID" property="tid"/>
+    </resultMap>
+</mapper>

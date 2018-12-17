@@ -1,0 +1,36 @@
+.back_head{
+	width:80%;
+	padding: 0 10%; 
+}
+
+.back_header_left{
+	float:left;
+	height:80px;
+	width:40%;
+}
+
+.back_header_right{
+	float:right;
+	width:40%; 
+	line-height:20px;
+	text-align:right;
+}
+
+.back_current_user{
+	text-decoration:underline;
+}
+
+.back_exit{
+	color:red;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+#back_curent_time{
+	height:25px;
+	line-height:25px;
+}
+
+.p-style{
+	height:40px;
+}

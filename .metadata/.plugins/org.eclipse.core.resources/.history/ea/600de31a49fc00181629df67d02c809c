@@ -1,0 +1,10 @@
+package com.taotao.test.fastdfs;
+
+public class TestFastdfs {
+	public void uploadFile() throws Exception{
+		
+		
+		
+	}
+
+}

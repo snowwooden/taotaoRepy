@@ -1,0 +1,83 @@
+<table id="goodstype-manage" data-options="fit:true"></table>
+<script>
+$(function(){
+	$('#goodstype-manage').datagrid({
+		url:'../json/Goods_backGoodsType',
+		loadMsg:'数据加载中...',
+		fitColumns:true,
+		rownumbers:true,
+		striped:true,
+		sortName:'tid',
+		sortOrder:'asc',
+		remoteSort:false,
+		columns:[[
+			{field:'id',title:'',width:30,align:'center',checkbox:true},
+			{field:'tid',title:'分类编号',width:100,align:'center',sortable:true},
+			{field:'tType',title:'类别名称',width:200,align:'center'}, 
+			{field:'tContent',title:'类别说明',width:500,align:'center'}
+		]],
+		toolbar: [{
+			iconCls: 'icon-add',
+			text:'添加',
+			handler: function(){
+				$("#add_type").dialog("open");
+			}
+		},'-',{
+			iconCls: 'icon-remove',
+			text:'删除',
+			handler: function(){
+				alert('help');
+			}
+		}]
+	});
+});
+
+function addTypeInfo(){
+	var type = $("#gs-type").val().trim();
+	var content = $("#gs-content").val().trim();
+	$.ajax({
+	    url: "../json/Goods_addType",    //请求的url地址
+	    dataType: "json",   //返回格式为json
+	    async: true, //请求是否异步，默认为异步，这也是ajax重要特性
+	    type: "POST",
+	    data:{
+	    	"gst.tType":type,
+	    	"gst.tContent":content,
+	    },
+	    success: function(data) {
+	    	if(parseInt($.trim(data.obj))>=1){
+	    		$.messager.show({
+					title:'成功提示',
+					msg:'添加信息成功！',
+					timeout:3000,
+					showType:'slide'
+				});
+	    		$("#add_type").dialog("close");
+	    		$("#gs-type").val("");
+	    		$("#gs-content").val("");
+				$('#goodstype-manage').datagrid("reload");
+	    	}else{
+	    		$.messager.alert('错误提示','添加信息失败,请稍后重试!','error');
+	    	}
+	    }
+	});
+}
+
+</script>
+<div id="add_type" class="easyui-dialog" title="添加商品分类" style="width:370px;height:270px;"
+	data-options="iconCls:'icon-add',resizable:true,modal:true,closed:true">
+	<div style="padding:10px 30px;">
+		<p style="height:40px;line-height:40px;">
+			<label for="gs-type">商品分类：</label>
+			<input style="padding:3px 5px;width:200px;" type="text" id="gs-type"/>
+		</p>
+		<p style="position: relative;">
+			<label style="position: absolute;" for="gs-content">详细说明：</label>
+			<textarea style="resize:none;padding:3px 5px;width:200px;height:100px;margin-left:65px;" id="gs-content">
+			</textarea>
+		</p>
+		<p style="height:40px;line-height:40px;text-align:center;">
+			<input style="padding:5px 25px;" type="button" onclick="addTypeInfo()" value="添加">
+		</p>
+	</div>
+</div>

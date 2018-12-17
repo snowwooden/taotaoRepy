@@ -1,0 +1,27 @@
+package com.taotao.content.service.impl;
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mysql.fabric.xmlrpc.base.Data;
+import com.taotao.content.service.ContentService;
+import com.taotao.mapper.TbContentMapper;
+import com.taotao.pojo.TbContent;
+
+import taotao_manager_pojo.TaotaoResult;
+@Service
+public class ContentServiceImpl implements ContentService {
+@Autowired
+private TbContentMapper contentmapper;
+	@Override
+	public TaotaoResult addContent(TbContent content) {
+		//补全表单信息（基于数据表）
+		content.setCreated(new Date());
+		content.setUpdated(new Date());
+		contentmapper.insert(content);
+		return TaotaoResult.ok();
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.taotao.service;
+
+import java.util.List;
+
+import taotao_manager_pojo.EasyUIDataGridResult;
+
+public interface IntemCatService {
+	
+          List<EasyUIDataGridResult> getItemCatList(long parentId );
+}

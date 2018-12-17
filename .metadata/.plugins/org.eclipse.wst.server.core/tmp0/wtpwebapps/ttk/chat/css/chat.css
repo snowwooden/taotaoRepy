@@ -1,0 +1,221 @@
+*{
+	margin:0px auto;
+	padding:0px;	
+}
+
+body{
+	margin:0px auto;
+	padding:0px;
+	font-family:"幼圆";
+	width:1000px;
+	background:#94C2D1 url(../images/body_bg_page.jpg) no-repeat center top;
+}
+ul li{
+	list-style:none;
+}
+
+#chat_header{
+	padding-top:10px;
+	width:100%;
+	height:40px;
+	background:#fff url(../images/chat_head.png) no-repeat left center;
+	background-size:auto 50px;
+}
+
+#chat_header p{
+	text-align:center;
+	width:30%;
+	border:#94C2D1 1px solid;
+	margin-left:350px;
+	font-size:12px;
+	font-weight:bold;
+	line-height:30px;
+	border-radius:15px;
+}
+
+#chat_body{
+	width:100%;
+	height:520px;
+}
+
+#chat_body_left{
+	margin-top:10px;
+	width:30%;
+	height:100%;
+	float:left;
+	border-top-right-radius:8px;
+	border-top:1px dashed #A0A0A4;
+	border-right:1px dashed #A0A0A4;
+}
+
+#chat_body_left .chat_body_left_head{
+	width:100%;
+	height:60px;
+	position:relative;
+}
+
+#chat_body_left .chat_body_left_head p{
+	font-weight:bold;
+	position:absolute;
+	padding-left:60px;
+	line-height:40px;
+	font-size:16px;
+	height:40px;
+	width:75%;
+	left:0;
+	top:10px;
+	background:#fff url(../images/chat.png) no-repeat left center;
+	border-top-right-radius:25px;
+	border-bottom-right-radius:25px;
+}
+
+#chat_body_left #userList{
+	padding:10px;
+	width:260px;
+	height:440px;
+	margin-left:0px;
+	background:#fff;
+	border-radius:8px;
+	overflow-y:scroll;
+}
+
+#chat_body_left ul li{
+	line-height:40px;
+	height:40px;
+	width:200px;
+	padding-left:40px;
+	border-bottom:#46A3FF 1px solid;
+}
+
+#chat_body_left .chat_text{
+	float:left;
+	margin:10px;
+	line-height:25px;
+}
+
+#chat_body_left .chat_text p{
+	font-size:14px;
+	font-weight:bold;
+}
+
+#chat_body_right{
+	border-top-left-radius:8px;
+	margin-top:10px;
+	width:67%;
+	height:100%;
+	float:right;
+	position:relative;
+	border-top:1px dashed #A0A0A4;
+	border-left:1px dashed #A0A0A4;
+}
+
+#chat_body_right .start_chat{
+	border-top-left-radius:8px;
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#chat_body_right .start_chat_window .message_win{
+	border-top-left-radius:8px;
+	height:366px;
+	width:100%;
+	float:left;
+	background:#FFF;
+}
+
+#chat_body_right .start_chat_window .message_win #parent{
+	margin-top:10px;
+	height:90%;
+	width:95%;
+	padding:5px;
+	overflow-y:scroll;
+}
+
+#chat_body_right .start_chat_window .message_win #message_win_show #one_msg{
+	margin-bottom:20px;
+	word-break:break-all;
+}
+
+#chat_body_right .start_chat_window .message_win #message_win_show p{
+	font-size:12px;
+}
+
+#chat_body_right .start_chat_window .message_win #message_win_show p span{
+	display:inline-block;
+	margin-right:30px;
+}
+
+#chat_body_right .start_chat_window .message_win #message_win_show #msg_content{
+	display:inline-block;
+	margin-top:8px;
+	line-height:25px;
+	margin-bottom:10px;
+}
+
+#chat_body_right .start_chat_window .message_win #message_win_show #msg_bottom_hr{
+	border:#A0A0A4 1px dashed;
+}
+
+
+#chat_body_right .start_chat_window .send_win{
+	clear:both;
+	width:100%;
+	height:155px;
+}
+
+#chat_body_right .start_chat_window .send_win .send_win_tools{
+	border-top:1px solid #A0A0A4;
+	background:#FFF;
+	height:30px;
+	width:100%;
+}
+
+#chat_body_right .start_chat_window .send_win .send_win_tools a{
+	margin-left:10px;
+	line-height:30px;
+}
+
+#chat_body_right .start_chat_window .send_win .send_win_area p{
+	margin-top: 0;
+	background:#fff;
+	height:40px;
+	width:95%;
+	text-align:right;
+	line-height: 40px;
+	padding-right: 5%;
+}
+
+#chat_body_right .start_chat_window .send_win .send_win_area p input{
+	width: 80px;
+}
+
+
+#chat_body_right .start_chat_window .send_win #send_message_textarea{
+	height:70px;
+	width:98%;
+	border:none;
+	padding:5px 1%;
+	font-size:12px;
+	resize:none;
+}
+
+.body_bottom_hr{
+	border:0;
+    height:1px;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+}
+
+#chat_footer{
+	clear:both;
+	width:100%;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+}
+

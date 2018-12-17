@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shm.dao.IGoodsDao">
+	
+    <select id="getOneGoods" parameterType="int" resultType="goods">
+    	select gs.gid,u.callName as temp1,gt.tType as temp2,gs.gsTitle,gs.price,gs.discount,gs.color,gs.gsIntro,gs.deal,gs.pTime,u.tel as temp3,gs.buy_status,gs.show_status,u.dorm as temp4,gs.imgUrl
+			from shm_goods gs,shm_goodsType gt,shm_user u 
+				where gs.userId=u.userId and gs.tid=gt.tid and gs.gid=#{gid}
+    </select>
+    
+    <select id="seeOneGoods" parameterType="int" resultType="goods">
+    	select gs.gid,u.callName as temp1,gt.tType as temp2,gs.gsTitle,gs.price,gs.discount,gs.color,gs.gsIntro,gs.deal,gs.pTime,u.tel as temp3,gs.buy_status,gs.show_status,u.dorm as temp4,gs.imgUrl
+			from shm_goods gs,shm_goodsType gt,shm_user u 
+				where gs.userId=u.userId and gs.tid=gt.tid and gs.show_status=1 and gs.gid=#{gid}
+    </select>
+    
+    <select id="searchGoods" parameterType="String"	resultType="goods">
+    	select * from db_secondhandmarket.shm_goods where show_status=1 and buy_status=0 and gsTitle like concat('%',#{keyWord},'%')
+    </select>
+    
+    <insert id="addOneGoods" parameterType="goods">
+    	insert into shm_goods values(null,#{userId},#{tid},#{gsTitle},#{price},#{discount},#{color},#{gsIntro},#{deal},now(),'../img/goods/goodsinfo_0.jpg',false,false);
+    </insert>
+    
+    <update id="editShowStatus" parameterType="int">
+    	update shm_goods set show_status=1 where gid=#{gid} and show_status=0
+    </update>
+    
+    <update id="editBuyStatus" parameterType="int">
+    	update shm_goods set buy_status=1 where gid=#{gid} and buy_status=0
+    </update>
+   
+    <select id="getGoodsList" resultMap="goodsList">
+    	select * from shm_goods
+    </select>
+    
+    <select id="getGoodsByType" parameterType="int" resultMap="goodsList">
+    	select * from shm_goods where tId = #{tId} and show_status = 1 and buy_status = 0
+    </select>
+    
+    <resultMap type="goods" id="goodsList" autoMapping="true">
+    	<id column="GID" property="gid"/>
+    </resultMap>
+</mapper>

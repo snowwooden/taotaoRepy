@@ -1,0 +1,78 @@
+<table id="usser-panel" data-options="fit:true"></table>
+<script>
+$(function(){
+	$('#usser-panel').datagrid({
+		url:'../json/User_userList',
+		loadMsg:'数据加载中...',
+		fitColumns:true,
+		rownumbers:true,
+		striped:true,
+		sortName:'userId',
+		sortOrder:'asc',
+		remoteSort:false,
+		columns:[[
+			{field:'id',title:'',width:50,align:'center',checkbox:true},
+			{field:'userId',title:'编号',width:50,align:'center',sortable:true},
+			{field:'account',title:'账号信息',width:150,align:'center'}, 
+			{field:'callName',title:'昵称',width:100,align:'center'},
+			{field:'realName',title:'真实姓名',width:100,align:'center'},
+			{field:'sex',title:'性别',width:50,align:'center',formatter:function(value, rowData, index){
+				return value=='male'?"男":"女";
+			}},
+			{field:'headImg',title:'头像',width:50,align:'center'},
+			{field:'birth',title:'生日',width:100,align:'center'},
+			{field:'dorm',title:'宿舍',width:100,align:'center'},
+			{field:'QQ',title:'QQ',width:100,align:'center'},
+			{field:'tel',title:'联系方式',width:100,align:'center'},
+			{field:'intro',title:'个人简介',width:200,align:'center'}
+		]],
+		toolbar: [{
+			iconCls: 'icon-remove',
+			text:'删除',
+			handler: function(){
+				alert('help')
+			}
+		}]
+	});
+});
+
+function addAgencyInfo(){
+	var aname=$("#agency_aname").val();
+	var aaddr=$("#agency_aaddr").val();
+	var atel=$("#agency_atel").val();
+	var aprice=$("#agency_aprice").val();
+	var aintroduce=$("#agency_aintroduce").val();
+	$.ajax({
+	    url: "../json/AgencyInfo_addAgencyInfo",    //请求的url地址
+	    dataType: "json",   //返回格式为json
+	    async: true, //请求是否异步，默认为异步，这也是ajax重要特性
+	    type: "POST",
+	    data:{
+	    	"aname":aname,
+	    	"aaddr":aaddr,
+	    	"atel":atel,
+	    	"aprice":aprice,
+	    	"aintroduce":aintroduce
+	    },
+	    success: function(data) {
+	    	if(parseInt($.trim(data.obj))>=1){
+	    		$.messager.show({
+					title:'成功提示',
+					msg:'添加信息成功！',
+					timeout:3000,
+					showType:'slide'
+				});
+	    		$("#add_agencyInfo").dialog("close");
+	    		$("#agency_aname").val("");
+	    		$("#agency_aaddr").val("");
+	    		$("#agency_atel").val("");
+	    		$("#agency_aprice").val("");
+	    		$("#agency_aintroduce").val("");
+				$('#manage_agencyInfo').datagrid("reload");
+	    	}else{
+	    		$.messager.alert('错误提示','添加信息失败,请稍后重试!','error');
+	    	}
+	    }
+	});
+}
+</script>

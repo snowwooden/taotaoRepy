@@ -1,0 +1,218 @@
+*{
+	margin: 0px auto;
+	padding: 0px;
+}
+
+body{
+	padding: 0px;
+	width: 1340px;
+	margin: 0px auto;
+}
+
+ul li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+#menu{
+	position: fixed;
+	right: 40px;
+	top: 500px;
+	border: 1px #CCCCCC solid;
+	border-radius: 3px;
+	display: none;
+	background: white;
+	z-index: 1000;
+}
+
+#menu #to_top{
+	display: inline-block;
+	padding: 10px;
+	width: 20px;
+	height: 20px;
+	background: url(../img/to_top.png) center center no-repeat;
+}
+
+#top_bar ul{
+	background: #F7F7F7;
+	height: 30px;
+	padding:0 100px;
+}
+
+#top_bar ul li{
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+	padding: 0 15px;
+}
+
+#top_bar ul li:nth-child(3){
+	margin-left: 580px;
+}
+
+#top_bar ul li a:hover{
+	color: #42A0FF;
+}
+
+#addFav{
+	display: inline-block;
+	padding-left: 21px;
+	background: url(../img/favicon.png) left no-repeat;
+}
+
+#scanicon{
+	display: inline-block;
+	padding-left: 21px;
+	background: url(../img/scanicon.png) left no-repeat;
+}
+
+header{
+	background: #42A0FF;
+	margin-bottom: 10px;
+}
+
+header .header_nav{
+	height: 100px;
+}
+
+header .header_nav ul{
+	float: left;
+	margin:25px 5%;
+	width: 35%;
+}
+
+header .header_nav .index_img{
+	float: left;
+	height: 80px;
+	width: 18%;
+	margin-left: 10%;
+	padding: 10px 0;
+	position: relative;
+}
+
+header .header_nav .index_img p{
+	position: absolute;
+	font-size: 12px;
+	text-align: right;
+	right: 0;
+	top: 60%;
+}
+
+header .header_nav .index_img img{
+	height: 100%;
+	width: 85%;
+}
+
+header .header_nav ul li{
+	height: 50px;
+	margin: 0 5%;
+	float: left;
+	line-height: 50px;
+	text-align: center;
+	font-size: 15px;
+}
+
+header .header_nav ul li a:hover{
+	display: inline-block;
+	height: 40px;
+	border-bottom: 4px black solid;
+}
+
+header .header_nav .search{
+	float: left;
+	margin-top: 30px;
+	width: 15%;
+	height: 38px;
+	line-height: 38px;
+	position: relative;
+}
+
+header .header_nav .search .search_in{
+	padding: 0 4%;
+	font-size: 14px;
+	width: 73%;
+	position: absolute;
+	height: 34px;
+	line-height: 35px;
+	border: 2px black solid;
+}
+
+header .header_nav .search .search_btn{
+	position: absolute;
+	left: 81%;
+	height: 38px;
+	border: none;
+	width: 38px;
+	background: black;
+	color: white;
+}
+
+footer{
+	clear: both;
+	border-top: 1px solid #42A0FF;
+	width: 100%;
+	color: #666;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+
+footer .mokuai{
+	float: left;
+	margin-left: 135px;
+}
+
+footer .mokuai dl{
+    float: left;
+    height: 150px;
+    width: 200px;
+    text-align: left;
+    margin-right: 40px;
+}
+
+footer .mokuai dl dt{
+    color: #42A0FF;
+    font-family: 微软雅黑;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+}
+
+footer .mokuai dl dd{
+    height: 25px;
+    line-height: 25px;
+}
+
+footer .mokuai dl dd a{
+    color: #666;
+    font-size: 12px;
+}
+
+footer .mokuai dl dd a:hover{
+	text-decoration: underline;
+}
+
+footer .intro{
+	float: right;
+	width: 300px;
+	height: 150px;
+	color: #666;
+	font-size: 12px;
+	margin-right: 150px;
+	line-height: 20px;
+}
+
+footer .copyright{
+	clear: both;
+	padding-top: 10px;
+	border-top: 1px solid #ccc;
+	height: 120px;
+	width: 80%;
+	font-size: 12px;
+	line-height: 25px;
+}

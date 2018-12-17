@@ -1,0 +1,5 @@
+package com.taotao.content.testforjdis;
+
+public class JedisTest {
+
+}

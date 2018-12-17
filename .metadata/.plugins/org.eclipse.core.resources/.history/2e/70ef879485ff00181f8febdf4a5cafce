@@ -1,0 +1,16 @@
+package com.taotao.content.service.impl;
+
+import com.taotao.content.service.ContentService;
+import com.taotao.pojo.TbContent;
+
+import taotao_manager_pojo.TaotaoResult;
+
+public class ContentServiceImpl implements ContentService {
+
+	@Override
+	public TaotaoResult addContent(TbContent content) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
